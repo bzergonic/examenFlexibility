@@ -19,6 +19,13 @@ public class ProductApi {
     @JsonProperty
     private int quantity;
 
+    public ProductApi(long id, String name, double price, int stock) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.stock = stock;
+    }
+
     public long getId() {
         return id;
     }

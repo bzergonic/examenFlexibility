@@ -19,6 +19,12 @@ public class ShoppingCartApi {
     @OneToMany
     private List<ProductApi> items;
 
+    public ShoppingCartApi(long orderId, int dni, List<ProductApi> items) {
+        this.orderId = orderId;
+        this.dni = dni;
+        this.items = items;
+    }
+
     public long getOrderId() {
         return orderId;
     }

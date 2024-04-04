@@ -31,6 +31,7 @@ public class ShoppingCartMapper {
     public ShoppingCartDAO mapShoppingCartApiToShoppingCartDao(ShoppingCartApi shoppingCartApi,
                                                                List<ProductDAO> allProducts) throws PaymentException {
         ShoppingCartDAO shoppingCartDAO = new ShoppingCartDAO();
+        shoppingCartDAO.setOrderId(shoppingCartApi.getOrderId());
         shoppingCartDAO.setDni(shoppingCartApi.getDni());
         shoppingCartDAO.setStatus(CartStatusEnum.NOT_PAID.toString());
         shoppingCartDAO.setTotalAmount(calculateTotalAmount(shoppingCartApi.getItems(), allProducts));
